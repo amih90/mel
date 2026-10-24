@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ניקיון לבית · 90 ₪ לשעה</title>
+  <meta name="description" content="ניקיון כללי לבית ב-90 ₪ לשעה. מזמינים אונליין, בוחרים תאריך ושעה, ואנחנו מגיעים.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3f8fd;
+      --surface: #ffffff;
+      --text: #0f2440;
+      --muted: #5f6f84;
+      --line: #e3ebf3;
+      --primary: #1565c0;
+      --primary-dark: #0d4f9c;
+      --primary-soft: #e3effb;
+      --whatsapp: #25d366;
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Heebo", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      padding-bottom: 120px; /* מקום לפס המחיר התחתון */
+    }
+    a { color: inherit; }
+    button { font: inherit; cursor: pointer; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(243, 248, 253, .92);
+      backdrop-filter: blur(8px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-weight: 800; font-size: 1.4rem; text-decoration: none; color: var(--primary); }
+    .help {
+      display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+      background: var(--surface); padding: 8px 16px; border-radius: 999px;
+      font-weight: 500; color: var(--muted); box-shadow: 0 2px 10px rgba(15, 36, 64, .06);
+    }
+
+    /* Hero */
+    .hero { padding: 32px 0 16px; text-align: center; }
+    .badge {
+      display: inline-block; background: var(--primary-soft); color: var(--primary);
+      padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: .9rem;
+    }
+    h1 { font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.2; margin: 16px 0 12px; }
+    h1 em { font-style: normal; color: var(--primary); }
+    .lead { font-size: 1.15rem; color: var(--muted); margin: 0 auto 8px; max-width: 560px; }
+    .perks { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin: 20px 0 0; padding: 0; list-style: none; color: var(--muted); font-weight: 500; }
+    .perks li::before { content: "✓ "; color: var(--primary); font-weight: 800; }
+
+    /* Steps progress */
+    .progress { display: flex; gap: 8px; margin: 28px 0 18px; }
+    .progress span { flex: 1; height: 6px; border-radius: 999px; background: var(--line); transition: background .2s; }
+    .progress span.on { background: var(--primary); }
+
+    h2 { font-size: 1.5rem; margin: 0 0 14px; }
+
+    /* Cards */
+    .card {
+      background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius);
+      padding: 20px; margin-bottom: 14px;
+    }
+    .service {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--primary-soft); border-color: #9cc3ea; position: relative;
+    }
+    .service .tag {
+      position: absolute; top: -13px; right: 20px;
+      background: var(--primary); color: #fff; font-size: .85rem; font-weight: 700;
+      padding: 2px 12px; border-radius: 999px;
+    }
+    .service .check {
+      flex: none; width: 48px; height: 48px; border-radius: 50%;
+      background: var(--primary); color: #fff; display: grid; place-items: center; font-size: 1.4rem;
+    }
+    .service .info { flex: 1; }
+    .service h3 { margin: 0; font-size: 1.3rem; }
+    .service p { margin: 2px 0; color: var(--muted); }
+    .service .rate { font-weight: 800; font-size: 1.2rem; color: var(--text); }
+    .service .art {
+      flex: none; width: 110px; height: 110px; border-radius: 16px;
+      background: linear-gradient(135deg, #cfe3f7, #f5faff); display: grid; place-items: center; font-size: 3rem;
+    }
+
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .row .label strong { display: block; font-size: 1.1rem; }
+    .row .label small { color: var(--muted); }
+    .stepper { display: flex; align-items: center; gap: 14px; }
+    .stepper button {
+      width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--line);
+      background: var(--bg); font-size: 1.5rem; color: var(--primary);
+    }
+    .stepper button:disabled { color: #c3cfdc; cursor: default; }
+    .stepper output { font-size: 1.8rem; font-weight: 700; min-width: 28px; text-align: center; }
+    .divider { height: 1px; background: var(--line); margin: 16px 0; }
+    .price-big { font-size: 1.6rem; font-weight: 800; }
+
+    .includes { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+    .includes li::before { content: "✓ "; color: var(--primary); font-weight: 800; }
+
+    /* Chips (date / time) */
+    .chips { display: flex; gap: 10px; overflow-x: auto; padding: 4px 2px 10px; scrollbar-width: thin; }
+    .chips.wrap { flex-wrap: wrap; overflow: visible; }
+    .chip {
+      flex: none; border: 2px solid var(--line); background: var(--surface); color: var(--text);
+      border-radius: 16px; padding: 10px 16px; text-align: center; min-width: 76px;
+    }
+    .chip small { display: block; color: var(--muted); font-size: .85rem; }
+    .chip strong { font-size: 1.15rem; }
+    .chip.on { border-color: var(--primary); background: var(--primary); color: #fff; }
+    .chip.on small { color: #d6e7fa; }
+
+    /* Form */
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; font-weight: 500; }
+    .field input, .field textarea {
+      font: inherit; padding: 13px 16px; border-radius: 14px; border: 2px solid var(--line);
+      background: var(--surface); color: var(--text); width: 100%;
+    }
+    .field input:focus, .field textarea:focus { outline: none; border-color: var(--primary); }
+
+    .summary dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 0; }
+    .summary dt { color: var(--muted); }
+    .summary dd { margin: 0; font-weight: 700; }
+
+    .step { display: none; }
+    .step.active { display: block; }
+    .back { background: none; border: 0; color: var(--primary); font-weight: 700; padding: 0; margin-bottom: 12px; }
+
+    .error { color: #c62828; font-weight: 500; min-height: 1.5em; margin: 4px 0 0; }
+
+    /* Sticky bottom bar */
+    .bar {
+      position: fixed; inset: auto 0 0 0; z-index: 20;
+      background: var(--surface); border-top: 1px solid var(--line);
+      box-shadow: 0 -8px 30px rgba(15, 36, 64, .08);
+    }
+    .bar .container { padding-top: 12px; padding-bottom: calc(14px + env(safe-area-inset-bottom)); }
+    .bar .row { margin-bottom: 10px; }
+    .bar .total { font-size: 1.6rem; font-weight: 800; }
+    .bar small { color: var(--muted); }
+    .cta {
+      width: 100%; border: 0; border-radius: 999px; padding: 16px;
+      background: var(--primary); color: #fff; font-size: 1.15rem; font-weight: 700;
+    }
+    .cta:hover { background: var(--primary-dark); }
+    .cta.wa { background: var(--whatsapp); }
+
+    footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: .95rem; }
+
+    @media (max-width: 520px) {
+      .service .art { width: 80px; height: 80px; font-size: 2.2rem; }
+      .service .check { width: 40px; height: 40px; font-size: 1.1rem; }
+      .includes { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">✨ בית נקי</a>
+      <a class="help js-wa" href="#">🎧 צריכה עזרה?</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <span class="badge">🏡 ניקיון כללי לבית</span>
+      <h1>את דואגת למשפחה,<br><em>אני דואגת לבית.</em></h1>
+      <p class="lead">בין העבודה, הילדים וכל השאר — אין זמן לניקיון יסודי. תזמיני עכשיו ותחזרי לבית נקי ומסודר.</p>
+      <ul class="perks">
+        <li>מחיר קבוע לשעה</li>
+        <li>הזמנה תוך דקה</li>
+        <li>אישור בוואטסאפ</li>
+      </ul>
+    </div>
+
+    <div class="progress" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+
+    <form id="booking" novalidate>
+      <!-- שלב 1: שירות ושעות -->
+      <section class="step active" data-step="1">
+        <h2>בחרי את הניקיון</h2>
+
+        <div class="card service">
+          <span class="tag">★ מומלץ</span>
+          <div class="check">✓</div>
+          <div class="info">
+            <h3>ניקיון כללי</h3>
+            <p>ניקיון יסודי של כל הבית</p>
+            <div class="rate">90 ₪ / שעה</div>
+            <p><small>מינימום <span class="js-min"></span> שעות</small></p>
+          </div>
+          <div class="art" aria-hidden="true">🧽</div>
+        </div>
+
+        <div class="card">
+          <div class="row">
+            <div class="label">
+              <strong>כמה שעות?</strong>
+              <small>המינימום הוא <span class="js-min"></span> שעות</small>
+            </div>
+            <div class="stepper">
+              <button type="button" id="minus" aria-label="הפחתת שעה">−</button>
+              <output id="hours">4</output>
+              <button type="button" id="plus" aria-label="הוספת שעה">+</button>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <span class="label"><strong>מחיר משוער</strong></span>
+            <span class="price-big js-total"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>מה כולל הניקיון?</strong>
+          <ul class="includes">
+            <li>מטבח: משטחים, כיריים ומכשירים</li>
+            <li>חדרי רחצה ושירותים</li>
+            <li>טאטוא ושטיפת רצפות</li>
+            <li>ניגוב אבק מרהיטים ומדפים</li>
+            <li>סידור חדרים והחלפת מצעים</li>
+            <li>מראות וחלונות</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- שלב 2: תאריך ושעה -->
+      <section class="step" data-step="2">
+        <button type="button" class="back">→ חזרה</button>
+        <h2>מתי נוח לך?</h2>
+        <div class="card">
+          <strong>תאריך</strong>
+          <div class="chips" id="dates"></div>
+        </div>
+        <div class="card">
+          <strong>שעת התחלה</strong>
+          <div class="chips wrap" id="times"></div>
+        </div>
+      </section>
+
+      <!-- שלב 3: פרטים -->
+      <section class="step" data-step="3">
+        <button type="button" class="back">→ חזרה</button>
+        <h2>הפרטים שלך</h2>
+        <div class="card">
+          <label class="field">שם מלא
+            <input name="name" required autocomplete="name" placeholder="לדוגמה: שרה כהן">
+          </label>
+          <label class="field">טלפון
+            <input name="phone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="050-000-0000">
+          </label>
+          <label class="field">כתובת
+            <input name="address" required autocomplete="street-address" placeholder="רחוב, מספר, עיר">
+          </label>
+          <label class="field">הערות (לא חובה)
+            <textarea name="notes" rows="3" placeholder="גודל הדירה, חיות מחמד, בקשות מיוחדות..."></textarea>
+          </label>
+        </div>
+        <div class="card summary">
+          <strong>סיכום ההזמנה</strong>
+          <div class="divider"></div>
+          <dl id="summary"></dl>
+        </div>
+      </section>
+
+      <p class="error" id="error" role="alert"></p>
+    </form>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> בית נקי · ניקיון כללי לבית · 90 ₪ לשעה</div>
+  </footer>
+
+  <div class="bar">
+    <div class="container">
+      <div class="row">
+        <div class="label"><strong>מחיר משוער</strong><small class="js-hours-note"></small></div>
+        <span class="total js-total"></span>
+      </div>
+      <button type="button" class="cta" id="next">המשך</button>
+    </div>
+  </div>
+
+  <script>
+    // ✏️ כאן משנים את מספר הטלפון שלך (פורמט בינלאומי, בלי + ובלי רווחים). לדוגמה: 972501234567
+    const PHONE = "972500000000";
+    const PRICE_PER_HOUR = 90;
+    const MIN_HOURS = 3;
+    const MAX_HOURS = 8;
+    const DAYS_AHEAD = 14;
+    const START_TIMES = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
+    const CLOSED_WEEKDAYS = [6]; // שבת
+
+    const state = { step: 1, hours: 4, date: null, time: null };
+    const $ = s => document.querySelector(s);
+    const $$ = s => document.querySelectorAll(s);
+    const form = $("#booking");
+    const errorEl = $("#error");
+
+    const waLink = text => `https://wa.me/${PHONE}?text=${encodeURIComponent(text)}`;
+    $$(".js-wa").forEach(a => {
+      a.href = waLink("שלום! יש לי שאלה לגבי ניקיון הבית");
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+    $$(".js-min").forEach(el => { el.textContent = MIN_HOURS; });
+    $("#year").textContent = new Date().getFullYear();
+
+    // --- שעות ומחיר ---
+    function renderPrice() {
+      $("#hours").textContent = state.hours;
+      $$(".js-total").forEach(el => { el.textContent = `₪${state.hours * PRICE_PER_HOUR}`; });
+      $(".js-hours-note").textContent = ` · ${state.hours} שעות × ₪${PRICE_PER_HOUR}`;
+      $("#minus").disabled = state.hours <= MIN_HOURS;
+      $("#plus").disabled = state.hours >= MAX_HOURS;
+    }
+    $("#plus").addEventListener("click", () => { state.hours = Math.min(MAX_HOURS, state.hours + 1); renderPrice(); });
+    $("#minus").addEventListener("click", () => { state.hours = Math.max(MIN_HOURS, state.hours - 1); renderPrice(); });
+
+    // --- תאריכים ושעות ---
+    function chip(container, value, html, key) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip";
+      b.innerHTML = html;
+      b.addEventListener("click", () => {
+        state[key] = value;
+        container.querySelectorAll(".chip").forEach(c => c.classList.remove("on"));
+        b.classList.add("on");
+        errorEl.textContent = "";
+      });
+      container.appendChild(b);
+    }
+
+    const datesEl = $("#dates");
+    for (let i = 1; i <= DAYS_AHEAD; i++) {
+      const d = new Date();
+      d.setDate(d.getDate() + i);
+      if (CLOSED_WEEKDAYS.includes(d.getDay())) continue;
+      const weekday = d.toLocaleDateString("he-IL", { weekday: "short" });
+      const dayMonth = d.toLocaleDateString("he-IL", { day: "numeric", month: "numeric" });
+      chip(datesEl, d, `<small>${weekday}</small><strong>${dayMonth}</strong>`, "date");
+    }
+    const timesEl = $("#times");
+    START_TIMES.forEach(t => chip(timesEl, t, `<strong>${t}</strong>`, "time"));
+
+    const formatDate = d => d.toLocaleDateString("he-IL", { weekday: "long", day: "numeric", month: "long" });
+
+    // --- ניווט בין שלבים ---
+    function goTo(step) {
+      state.step = step;
+      $$(".step").forEach(s => s.classList.toggle("active", Number(s.dataset.step) === step));
+      $$(".progress span").forEach((s, i) => s.classList.toggle("on", i < step));
+      const next = $("#next");
+      next.textContent = step === 3 ? "💬 שליחת ההזמנה בוואטסאפ" : "המשך";
+      next.classList.toggle("wa", step === 3);
+      errorEl.textContent = "";
+      if (step === 3) renderSummary();
+      $(".progress").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    $$(".back").forEach(b => b.addEventListener("click", () => goTo(state.step - 1)));
+
+    function renderSummary() {
+      const rows = [
+        ["שירות", "ניקיון כללי"],
+        ["תאריך", formatDate(state.date)],
+        ["שעה", state.time],
+        ["משך", `${state.hours} שעות`],
+        ["סה״כ", `₪${state.hours * PRICE_PER_HOUR}`],
+      ];
+      $("#summary").innerHTML = rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
+    }
+
+    $("#next").addEventListener("click", () => {
+      if (state.step === 1) return goTo(2);
+      if (state.step === 2) {
+        if (!state.date || !state.time) { errorEl.textContent = "נא לבחור תאריך ושעה"; return; }
+        return goTo(3);
+      }
+      const f = form.elements;
+      if (!f.name.value.trim() || !f.phone.value.trim() || !f.address.value.trim()) {
+        errorEl.textContent = "נא למלא שם, טלפון וכתובת";
+        return;
+      }
+      const lines = [
+        "שלום! אני רוצה להזמין ניקיון 🧽",
+        `👤 שם: ${f.name.value.trim()}`,
+        `📞 טלפון: ${f.phone.value.trim()}`,
+        `📍 כתובת: ${f.address.value.trim()}`,
+        `📅 תאריך: ${formatDate(state.date)}`,
+        `⏰ שעה: ${state.time}`,
+        `⌛ משך: ${state.hours} שעות (סה״כ ₪${state.hours * PRICE_PER_HOUR})`,
+      ];
+      if (f.notes.value.trim()) lines.push(`📝 הערות: ${f.notes.value.trim()}`);
+      window.open(waLink(lines.join("\n")), "_blank");
+    });
+
+    renderPrice();
+  </script>
+</body>
+</html>
