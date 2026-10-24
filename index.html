@@ -3,96 +3,196 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ניקיון לבית · 90 ₪ לשעה</title>
-  <meta name="description" content="ניקיון כללי לבית ב-90 ₪ לשעה. מזמינים אונליין, בוחרים תאריך ושעה, ואנחנו מגיעים.">
+  <title>בית נקי · ניקיון לבית בכפר סבא והשרון</title>
+  <meta name="description" content="בית נקי — ניקיון לבית בכפר סבא ואזור השרון. ניקיון שוטף 450 ₪, ניקיון יסודי כולל חלונות 700 ₪, או 90 ₪ לשעה. מזמינים אונליין ואנחנו מגיעים.">
+  <meta name="theme-color" content="#f7f3ec">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="בית נקי · ניקיון לבית בכפר סבא והשרון">
+  <meta property="og:description" content="מזמינים אונליין תוך דקה, בוחרים תאריך ושעה — וחוזרים לבית נקי ומסודר.">
+  <meta property="og:image" content="https://amih90.github.io/mel/img/og.jpg">
+  <meta property="og:locale" content="he_IL">
+  <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+  <link rel="apple-touch-icon" href="img/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/hero.webp">
+  <script>document.documentElement.classList.add("js");</script>
   <style>
     :root {
-      --bg: #f3f8fd;
-      --surface: #ffffff;
-      --text: #0f2440;
-      --muted: #5f6f84;
-      --line: #e3ebf3;
-      --primary: #1565c0;
-      --primary-dark: #0d4f9c;
-      --primary-soft: #e3effb;
+      --bg: #f7f3ec;
+      --surface: #fffdf9;
+      --text: #1f2a26;
+      --muted: #6b746f;
+      --line: #ebe4d8;
+      --primary: #2f6b5b;
+      --primary-dark: #24574a;
+      --primary-soft: #e6efe9;
+      --blush: #f2dccf;
       --whatsapp: #25d366;
-      --radius: 20px;
+      --radius: 24px;
+      --shadow: 0 14px 40px -22px rgba(31, 42, 38, .35);
+      --display: "Fredoka", "Rubik", sans-serif;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: "Heebo", system-ui, sans-serif;
+      font-family: "Rubik", system-ui, sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background:
+        radial-gradient(900px 500px at 100% -5%, var(--primary-soft) 0, transparent 60%),
+        radial-gradient(700px 500px at 0% 30%, #f6e6dc 0, transparent 60%),
+        var(--bg);
+      background-repeat: no-repeat;
       line-height: 1.6;
-      padding-bottom: 120px; /* מקום לפס המחיר התחתון */
+      padding-bottom: 140px; /* מקום לפס המחיר התחתון */
     }
     a { color: inherit; }
     button { font: inherit; cursor: pointer; }
+    img { display: block; max-width: 100%; }
     .container { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+    .container.wide { max-width: 1040px; }
 
     /* Header */
     header {
       position: sticky; top: 0; z-index: 10;
-      background: rgba(243, 248, 253, .92);
-      backdrop-filter: blur(8px);
+      background: rgba(247, 243, 236, .85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { font-weight: 800; font-size: 1.4rem; text-decoration: none; color: var(--primary); }
+    .logo {
+      display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+      font-family: var(--display); font-weight: 700; font-size: 1.5rem; color: var(--primary);
+    }
+    .logo img { width: 36px; height: 36px; border-radius: 11px; }
     .help {
       display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
       background: var(--surface); padding: 8px 16px; border-radius: 999px;
-      font-weight: 500; color: var(--muted); box-shadow: 0 2px 10px rgba(15, 36, 64, .06);
+      font-weight: 500; color: var(--muted); border: 1px solid var(--line);
+      transition: border-color .2s, color .2s;
     }
+    .help:hover { border-color: var(--primary); color: var(--primary); }
 
     /* Hero */
-    .hero { padding: 32px 0 16px; text-align: center; }
-    .badge {
-      display: inline-block; background: var(--primary-soft); color: var(--primary);
-      padding: 6px 14px; border-radius: 999px; font-weight: 700; font-size: .9rem;
+    .hero { padding-top: 8px; }
+    .hero-media {
+      position: relative; overflow: hidden; border-radius: 32px;
+      min-height: 480px; display: flex; align-items: flex-end;
+      box-shadow: 0 30px 60px -30px rgba(31, 42, 38, .5);
     }
-    h1 { font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.2; margin: 16px 0 12px; }
-    h1 em { font-style: normal; color: var(--primary); }
-    .lead { font-size: 1.15rem; color: var(--muted); margin: 0 auto 8px; max-width: 560px; }
-    .perks { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin: 20px 0 0; padding: 0; list-style: none; color: var(--muted); font-weight: 500; }
-    .perks li::before { content: "✓ "; color: var(--primary); font-weight: 800; }
+    .hero-media > img {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+      animation: hero-zoom 14s ease-out both;
+    }
+    .hero-media::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(20, 32, 28, .88) 0%, rgba(20, 32, 28, .55) 45%, rgba(20, 32, 28, 0) 75%);
+    }
+    @keyframes hero-zoom { from { transform: scale(1.08); } to { transform: scale(1); } }
+    .hero-text { position: relative; z-index: 1; padding: 28px 24px; color: #fff; max-width: 600px; }
+    .badge {
+      display: inline-block; background: rgba(255, 255, 255, .18); color: #fff;
+      border: 1px solid rgba(255, 255, 255, .35); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      padding: 5px 14px; border-radius: 999px; font-weight: 500; font-size: .9rem;
+    }
+    h1 {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(2.1rem, 7vw, 3.4rem); line-height: 1.15; margin: 14px 0 10px;
+    }
+    h1 em { font-style: normal; color: var(--blush); }
+    .lead { font-size: 1.1rem; color: rgba(255, 255, 255, .88); margin: 0 0 4px; }
+    .perks { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; font-weight: 500; font-size: .95rem; }
+    .perks li {
+      background: rgba(255, 255, 255, .92); color: var(--primary-dark);
+      padding: 4px 12px; border-radius: 999px;
+    }
+    .perks li::before { content: "✓ "; font-weight: 700; }
+    .price-tag {
+      position: absolute; top: 18px; left: 18px; z-index: 1;
+      width: 96px; height: 96px; border-radius: 50%;
+      background: var(--surface); color: var(--text);
+      display: grid; place-content: center; text-align: center; line-height: 1.1;
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, .35);
+      transform: rotate(-8deg);
+    }
+    .price-tag strong { font-family: var(--display); font-size: 1.7rem; color: var(--primary); }
+    .price-tag small { color: var(--muted); font-weight: 500; }
+
+    /* Section headings */
+    section { scroll-margin-top: 80px; }
+    .eyebrow {
+      display: block; color: var(--primary); font-weight: 700; font-size: .85rem;
+      letter-spacing: .04em; margin-bottom: 2px;
+    }
+    h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 4.5vw, 2rem); line-height: 1.25; margin: 0 0 16px; }
+    .section-head { margin: 48px 0 18px; }
+    .section-head p { color: var(--muted); margin: -8px 0 0; }
+
+    /* Rooms gallery */
+    .rooms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .room { position: relative; margin: 0; overflow: hidden; border-radius: var(--radius); aspect-ratio: 4 / 5; background: var(--line); }
+    .room img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .room:hover img { transform: scale(1.05); }
+    .room figcaption {
+      position: absolute; bottom: 12px; right: 12px;
+      background: rgba(255, 253, 249, .92); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      padding: 4px 14px; border-radius: 999px; font-weight: 700; font-size: .95rem;
+    }
 
     /* Steps progress */
-    .progress { display: flex; gap: 8px; margin: 28px 0 18px; }
-    .progress span { flex: 1; height: 6px; border-radius: 999px; background: var(--line); transition: background .2s; }
+    .progress { display: flex; gap: 8px; margin: 0 0 6px; scroll-margin-top: 80px; }
+    .progress span { flex: 1; height: 6px; border-radius: 999px; background: var(--line); transition: background .3s; }
     .progress span.on { background: var(--primary); }
-
-    h2 { font-size: 1.5rem; margin: 0 0 14px; }
+    .progress-labels { display: flex; margin: 0 0 22px; padding: 0; list-style: none; color: var(--muted); font-size: .9rem; font-weight: 500; }
+    .progress-labels li { flex: 1; transition: color .3s; }
+    .progress-labels li.on { color: var(--primary); }
 
     /* Cards */
     .card {
-      background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius);
-      padding: 20px; margin-bottom: 14px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 22px; margin-bottom: 14px; box-shadow: var(--shadow);
     }
+    .packages { display: grid; gap: 4px; margin-bottom: 14px; }
+    .packages .service:first-child { margin-top: 10px; }
     .service {
-      display: flex; align-items: center; gap: 16px;
-      background: var(--primary-soft); border-color: #9cc3ea; position: relative;
+      display: flex; align-items: center; gap: 16px; position: relative; cursor: pointer;
+      border: 2px solid var(--line); transition: border-color .2s, background .2s, transform .15s;
     }
+    .service:hover { border-color: #b9cfc5; }
+    .service input { position: absolute; opacity: 0; pointer-events: none; }
+    .service.on {
+      background: linear-gradient(135deg, var(--primary-soft), var(--surface) 70%);
+      border-color: var(--primary);
+    }
+    .service:has(input:focus-visible) { outline: 3px solid var(--primary-soft); outline-offset: 2px; }
     .service .tag {
       position: absolute; top: -13px; right: 20px;
       background: var(--primary); color: #fff; font-size: .85rem; font-weight: 700;
       padding: 2px 12px; border-radius: 999px;
     }
     .service .check {
-      flex: none; width: 48px; height: 48px; border-radius: 50%;
-      background: var(--primary); color: #fff; display: grid; place-items: center; font-size: 1.4rem;
+      flex: none; width: 28px; height: 28px; border-radius: 50%;
+      border: 2px solid var(--line); background: var(--surface); color: #fff;
+      display: grid; place-items: center; font-size: .95rem; font-weight: 700; transition: background .2s, border-color .2s;
     }
-    .service .info { flex: 1; }
-    .service h3 { margin: 0; font-size: 1.3rem; }
-    .service p { margin: 2px 0; color: var(--muted); }
-    .service .rate { font-weight: 800; font-size: 1.2rem; color: var(--text); }
+    .service.on .check { background: var(--primary); border-color: var(--primary); }
+    .service.on .check::before { content: "✓"; }
+    .service .info { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+    .service .name { font-family: var(--display); font-weight: 700; font-size: 1.4rem; line-height: 1.2; }
+    .service .desc { color: var(--muted); }
+    .service .desc strong { color: var(--text); }
+    .service .rate { font-family: var(--display); font-weight: 700; font-size: 1.45rem; color: var(--primary); }
+    .service .rate small { font-family: "Rubik", sans-serif; font-weight: 500; font-size: .9rem; color: var(--muted); }
+    .rooms-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .rooms-list span {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+      padding: 1px 10px; font-size: .85rem; font-weight: 500;
+    }
     .service .art {
-      flex: none; width: 110px; height: 110px; border-radius: 16px;
-      background: linear-gradient(135deg, #cfe3f7, #f5faff); display: grid; place-items: center; font-size: 3rem;
+      flex: none; width: 116px; height: 116px; border-radius: 20px; object-fit: cover;
+      box-shadow: 0 10px 24px -12px rgba(31, 42, 38, .45);
     }
 
     .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
@@ -100,77 +200,95 @@
     .row .label small { color: var(--muted); }
     .stepper { display: flex; align-items: center; gap: 14px; }
     .stepper button {
-      width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--line);
-      background: var(--bg); font-size: 1.5rem; color: var(--primary);
+      width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line);
+      background: var(--bg); font-size: 1.5rem; color: var(--primary); transition: background .2s, border-color .2s;
     }
-    .stepper button:disabled { color: #c3cfdc; cursor: default; }
-    .stepper output { font-size: 1.8rem; font-weight: 700; min-width: 28px; text-align: center; }
+    .stepper button:not(:disabled):hover { background: var(--primary-soft); border-color: var(--primary); }
+    .stepper button:disabled { color: #cfc8bc; cursor: default; }
+    .stepper output { font-family: var(--display); font-size: 2rem; font-weight: 700; min-width: 28px; text-align: center; }
     .divider { height: 1px; background: var(--line); margin: 16px 0; }
-    .price-big { font-size: 1.6rem; font-weight: 800; }
+    .price-big { font-family: var(--display); font-size: 1.8rem; font-weight: 700; color: var(--primary); }
 
-    .includes { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
-    .includes li::before { content: "✓ "; color: var(--primary); font-weight: 800; }
+    .includes { margin: 12px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; }
+    .includes li { display: flex; gap: 8px; align-items: flex-start; }
+    .includes li::before {
+      content: "✓"; flex: none; width: 22px; height: 22px; margin-top: 2px; border-radius: 50%;
+      background: var(--primary-soft); color: var(--primary); font-weight: 700; font-size: .8rem;
+      display: grid; place-items: center;
+    }
+
+    .note { margin: 14px 0 0; color: var(--muted); font-size: .9rem; }
 
     /* Chips (date / time) */
-    .chips { display: flex; gap: 10px; overflow-x: auto; padding: 4px 2px 10px; scrollbar-width: thin; }
+    .chips { display: flex; gap: 10px; overflow-x: auto; padding: 10px 2px 10px; scrollbar-width: thin; }
     .chips.wrap { flex-wrap: wrap; overflow: visible; }
     .chip {
-      flex: none; border: 2px solid var(--line); background: var(--surface); color: var(--text);
+      flex: none; border: 1px solid var(--line); background: var(--bg); color: var(--text);
       border-radius: 16px; padding: 10px 16px; text-align: center; min-width: 76px;
+      transition: border-color .2s, background .2s, transform .15s;
     }
+    .chip:hover { border-color: var(--primary); }
+    .chip:active { transform: scale(.96); }
     .chip small { display: block; color: var(--muted); font-size: .85rem; }
     .chip strong { font-size: 1.15rem; }
-    .chip.on { border-color: var(--primary); background: var(--primary); color: #fff; }
-    .chip.on small { color: #d6e7fa; }
+    .chip.on { border-color: var(--primary); background: var(--primary); color: #fff; box-shadow: 0 8px 18px -10px var(--primary); }
+    .chip.on small { color: #cfe3da; }
 
     /* Form */
     .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; font-weight: 500; }
     .field input, .field textarea {
-      font: inherit; padding: 13px 16px; border-radius: 14px; border: 2px solid var(--line);
-      background: var(--surface); color: var(--text); width: 100%;
+      font: inherit; padding: 13px 16px; border-radius: 14px; border: 1px solid var(--line);
+      background: var(--bg); color: var(--text); width: 100%; transition: border-color .2s, background .2s, box-shadow .2s;
     }
-    .field input:focus, .field textarea:focus { outline: none; border-color: var(--primary); }
+    .field input:focus, .field textarea:focus {
+      outline: none; border-color: var(--primary); background: var(--surface);
+      box-shadow: 0 0 0 4px var(--primary-soft);
+    }
 
     .summary dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 0; }
     .summary dt { color: var(--muted); }
     .summary dd { margin: 0; font-weight: 700; }
 
     .step { display: none; }
-    .step.active { display: block; }
+    .step.active { display: block; animation: fade-up .35s ease both; }
     .back { background: none; border: 0; color: var(--primary); font-weight: 700; padding: 0; margin-bottom: 12px; }
 
-    .error { color: #c62828; font-weight: 500; min-height: 1.5em; margin: 4px 0 0; }
+    .error { color: #b3261e; font-weight: 500; min-height: 1.5em; margin: 4px 0 0; }
 
     /* Sticky bottom bar */
     .bar {
       position: fixed; inset: auto 0 0 0; z-index: 20;
-      background: var(--surface); border-top: 1px solid var(--line);
-      box-shadow: 0 -8px 30px rgba(15, 36, 64, .08);
+      background: rgba(255, 253, 249, .94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid var(--line);
+      box-shadow: 0 -10px 30px rgba(31, 42, 38, .08);
     }
     .bar .container { padding-top: 12px; padding-bottom: calc(14px + env(safe-area-inset-bottom)); }
     .bar .row { margin-bottom: 10px; }
-    .bar .total { font-size: 1.6rem; font-weight: 800; }
+    .bar .total { font-family: var(--display); font-size: 1.8rem; font-weight: 700; color: var(--primary); }
     .bar small { color: var(--muted); }
     .cta {
       width: 100%; border: 0; border-radius: 999px; padding: 16px;
       background: var(--primary); color: #fff; font-size: 1.15rem; font-weight: 700;
+      box-shadow: 0 12px 24px -14px var(--primary); transition: background .2s, transform .15s;
     }
     .cta:hover { background: var(--primary-dark); }
-    .cta.wa { background: var(--whatsapp); }
+    .cta:active { transform: scale(.98); }
+    .cta.wa { background: var(--whatsapp); box-shadow: 0 12px 24px -14px var(--whatsapp); }
 
     /* השאירו הודעה */
-    .contact { margin-top: 36px; }
-    .contact p { color: var(--muted); margin: 0 0 16px; }
+    .contact-card { display: grid; grid-template-columns: 1fr; padding: 0; overflow: hidden; }
+    .contact-card .photo { width: 100%; height: 190px; object-fit: cover; }
+    .contact-card .body { padding: 22px; }
+    .contact-card .body > p { color: var(--muted); margin: 0 0 16px; }
     .contact .actions { display: flex; flex-wrap: wrap; gap: 10px; }
     .contact .actions .cta { flex: 1 1 220px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
-    .cta.ghost { background: var(--surface); color: var(--primary); border: 2px solid var(--primary-soft); }
+    .cta.ghost { background: var(--surface); color: var(--primary); border: 1px solid var(--primary); box-shadow: none; }
     .cta.ghost:hover { background: var(--primary-soft); }
     .cta.wa:hover { background: #1ebe5b; }
-    .sent { color: #1b7f3b; font-weight: 500; min-height: 1.5em; margin: 8px 0 0; }
 
     /* כפתור וואטסאפ צף */
     .wa-float {
-      position: fixed; left: 16px; bottom: 150px; z-index: 30;
+      position: fixed; left: 16px; bottom: 160px; z-index: 30;
       width: 60px; height: 60px; border-radius: 50%;
       background: var(--whatsapp); color: #fff; display: grid; place-items: center;
       box-shadow: 0 8px 24px rgba(37, 211, 102, .45); text-decoration: none;
@@ -183,59 +301,138 @@
       0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, .55); }
       100% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
     }
-    @media (prefers-reduced-motion: reduce) { .wa-float { animation: none; } }
 
-    footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: .95rem; }
-    footer a { color: var(--primary); text-decoration: none; font-weight: 500; }
+    footer { padding: 40px 0 32px; text-align: center; color: var(--muted); font-size: .95rem; }
+    footer .logo { font-size: 1.3rem; margin-bottom: 6px; }
+    footer a:not(.logo) { color: var(--primary); text-decoration: none; font-weight: 500; }
+    footer .credit { font-size: .8rem; opacity: .75; margin-top: 8px; }
 
+    /* כניסה עדינה בגלילה */
+    @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    @media (min-width: 720px) {
+      .hero-media { min-height: 540px; }
+      .hero-text { padding: 44px 48px; }
+      .price-tag { top: 28px; left: 28px; width: 116px; height: 116px; }
+      .price-tag strong { font-size: 2.1rem; }
+      .contact-card { grid-template-columns: 1fr 1.3fr; }
+      .contact-card .photo { height: 100%; min-height: 320px; }
+    }
+    @media (max-width: 720px) {
+      .rooms { grid-template-columns: 1fr 1fr; gap: 10px; }
+    }
     @media (max-width: 520px) {
-      .service .art { width: 80px; height: 80px; font-size: 2.2rem; }
-      .service .check { width: 40px; height: 40px; font-size: 1.1rem; }
+      .service { align-items: flex-start; gap: 12px; padding: 18px 16px; }
+      .service .art { width: 72px; height: 72px; border-radius: 16px; }
+      .service .check { margin-top: 2px; }
       .includes { grid-template-columns: 1fr; }
+      .hero-text { padding: 24px 20px; }
+      .room figcaption { bottom: 8px; right: 8px; font-size: .85rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .wa-float, .hero-media > img, .step.active { animation: none; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .room img { transition: none; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="container nav">
-      <a href="#" class="logo">✨ בית נקי</a>
+    <div class="container wide nav">
+      <a href="#" class="logo">
+        <img src="img/logo.svg" alt="" width="36" height="36">
+        בית נקי
+      </a>
       <a class="help js-wa" href="#">🎧 צריכה עזרה?</a>
     </div>
   </header>
 
+  <div class="container wide hero">
+    <div class="hero-media">
+      <img src="img/hero.webp" alt="סלון נקי ומואר עם ספה אפורה וצמחים" width="1200" height="900" fetchpriority="high">
+      <span class="price-tag" aria-hidden="true"><strong>90 ₪</strong><small>לשעה</small></span>
+      <div class="hero-text">
+        <span class="badge">📍 כפר סבא ואזור השרון</span>
+        <h1>את דואגת למשפחה,<br><em>אני דואגת לבית.</em></h1>
+        <p class="lead">בין העבודה, הילדים וכל השאר — אין זמן לניקיון יסודי. תזמיני עכשיו ותחזרי לבית נקי ומסודר.</p>
+        <ul class="perks">
+          <li>מחיר קבוע מראש</li>
+          <li>הזמנה תוך דקה</li>
+          <li>אישור בוואטסאפ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="container wide reveal" aria-labelledby="rooms-title">
+    <div class="section-head">
+      <span class="eyebrow">כל פינה בבית</span>
+      <h2 id="rooms-title">נקי, מסודר ונעים לחזור אליו</h2>
+    </div>
+    <div class="rooms">
+      <figure class="room"><img src="img/kitchen.webp" alt="מטבח לבן ונקי" width="600" height="760" loading="lazy"><figcaption>מטבח</figcaption></figure>
+      <figure class="room"><img src="img/bathroom.webp" alt="חדר רחצה מבריק" width="600" height="760" loading="lazy"><figcaption>חדרי רחצה</figcaption></figure>
+      <figure class="room"><img src="img/living.webp" alt="סלון מואר ומסודר" width="600" height="760" loading="lazy"><figcaption>סלון</figcaption></figure>
+      <figure class="room"><img src="img/bedroom.webp" alt="חדר שינה עם מצעים מסודרים" width="600" height="760" loading="lazy"><figcaption>חדרי שינה</figcaption></figure>
+    </div>
+  </section>
+
   <main class="container">
-    <div class="hero">
-      <span class="badge">🏡 ניקיון כללי לבית</span>
-      <h1>את דואגת למשפחה,<br><em>אני דואגת לבית.</em></h1>
-      <p class="lead">בין העבודה, הילדים וכל השאר — אין זמן לניקיון יסודי. תזמיני עכשיו ותחזרי לבית נקי ומסודר.</p>
-      <ul class="perks">
-        <li>מחיר קבוע לשעה</li>
-        <li>הזמנה תוך דקה</li>
-        <li>אישור בוואטסאפ</li>
-      </ul>
+    <div class="section-head">
+      <span class="eyebrow">הזמנה ב-3 צעדים</span>
+      <h2>בואי נקבע ניקיון</h2>
     </div>
 
     <div class="progress" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+    <ol class="progress-labels" aria-hidden="true"><li class="on">שירות</li><li>מועד</li><li>פרטים</li></ol>
 
     <form id="booking" novalidate>
       <!-- שלב 1: שירות ושעות -->
       <section class="step active" data-step="1">
         <h2>בחרי את הניקיון</h2>
 
-        <div class="card service">
-          <span class="tag">★ מומלץ</span>
-          <div class="check">✓</div>
-          <div class="info">
-            <h3>ניקיון כללי</h3>
-            <p>ניקיון יסודי של כל הבית</p>
-            <div class="rate">90 ₪ / שעה</div>
-            <p><small>מינימום <span class="js-min"></span> שעות</small></p>
-          </div>
-          <div class="art" aria-hidden="true">🧽</div>
+        <div class="packages" role="radiogroup" aria-label="סוג הניקיון">
+          <label class="card service">
+            <input type="radio" name="service" value="regular" checked>
+            <span class="tag">★ מומלץ</span>
+            <span class="check" aria-hidden="true"></span>
+            <span class="info">
+              <span class="name">ניקיון שוטף</span>
+              <span class="desc">חבילה לדירה הכוללת:</span>
+              <span class="rooms-list"><span>3 חדרי שינה</span><span>סלון</span><span>מטבח</span><span>2 חדרי רחצה</span><span>מרפסת</span></span>
+              <span class="rate"><span class="js-price" data-service="regular"></span> <small>· כ-5 שעות</small></span>
+            </span>
+            <img class="art" src="img/regular.webp" alt="" width="360" height="360">
+          </label>
+
+          <label class="card service">
+            <input type="radio" name="service" value="deep">
+            <span class="check" aria-hidden="true"></span>
+            <span class="info">
+              <span class="name">ניקיון יסודי</span>
+              <span class="desc">ניקיון מעמיק לכל הבית, <strong>כולל חלונות</strong></span>
+              <span class="rate"><span class="js-price" data-service="deep"></span></span>
+            </span>
+            <img class="art" src="img/deep.webp" alt="" width="360" height="360">
+          </label>
+
+          <label class="card service">
+            <input type="radio" name="service" value="hourly">
+            <span class="check" aria-hidden="true"></span>
+            <span class="info">
+              <span class="name">ניקיון לפי שעה</span>
+              <span class="desc">בוחרים כמה שעות צריך — מינימום <span class="js-min"></span> שעות</span>
+              <span class="rate"><span class="js-rate"></span> / שעה</span>
+            </span>
+            <img class="art" src="img/service.webp" alt="" width="360" height="360">
+          </label>
         </div>
 
-        <div class="card">
+        <div class="card" id="hours-card" hidden>
           <div class="row">
             <div class="label">
               <strong>כמה שעות?</strong>
@@ -264,6 +461,7 @@
             <li>סידור חדרים והחלפת מצעים</li>
             <li>מראות וחלונות</li>
           </ul>
+          <p class="note">חומרי הניקיון אינם כלולים במחיר.</p>
         </div>
       </section>
 
@@ -310,31 +508,42 @@
     </form>
 
     <!-- השאירו הודעה -->
-    <section class="contact" id="contact">
-      <h2>יש שאלה? השאירי הודעה 💬</h2>
-      <div class="card">
-        <p>כתבי לי כאן ואחזור אלייך בהקדם — או פשוט שלחי הודעה בוואטסאפ.</p>
-        <form id="message-form" novalidate>
-          <label class="field">שם
-            <input name="name" autocomplete="name" placeholder="איך קוראים לך?">
-          </label>
-          <label class="field">ההודעה שלך
-            <textarea name="message" rows="4" required placeholder="לדוגמה: כמה זמן לוקח לנקות דירת 4 חדרים?"></textarea>
-          </label>
-          <div class="actions">
-            <button type="submit" class="cta wa">💬 שליחה בוואטסאפ</button>
-            <a class="cta ghost js-tel" href="#">📞 להתקשר עכשיו</a>
-          </div>
-          <p class="error" id="message-error" role="alert"></p>
-        </form>
+    <section class="contact reveal" id="contact">
+      <div class="section-head">
+        <span class="eyebrow">נשמח לעזור</span>
+        <h2>יש שאלה? השאירי הודעה 💬</h2>
+      </div>
+      <div class="card contact-card">
+        <img class="photo" src="img/contact.webp" alt="ידיים בכפפות ניקיון יוצרות צורת לב" width="900" height="600" loading="lazy">
+        <div class="body">
+          <p>כתבי לי כאן ואחזור אלייך בהקדם — או פשוט שלחי הודעה בוואטסאפ.</p>
+          <form id="message-form" novalidate>
+            <label class="field">שם
+              <input name="name" autocomplete="name" placeholder="איך קוראים לך?">
+            </label>
+            <label class="field">ההודעה שלך
+              <textarea name="message" rows="4" required placeholder="לדוגמה: כמה זמן לוקח לנקות דירת 4 חדרים?"></textarea>
+            </label>
+            <div class="actions">
+              <button type="submit" class="cta wa">💬 שליחה בוואטסאפ</button>
+              <a class="cta ghost js-tel" href="#">📞 להתקשר עכשיו</a>
+            </div>
+            <p class="error" id="message-error" role="alert"></p>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      © <span id="year"></span> בית נקי · ניקיון כללי לבית · 90 ₪ לשעה<br>
+      <a href="#" class="logo">
+        <img src="img/logo.svg" alt="" width="36" height="36">
+        בית נקי
+      </a><br>
+      © <span id="year"></span> · ניקיון לבית בכפר סבא ואזור השרון<br>
       <a class="js-wa" href="#">וואטסאפ</a> · <a class="js-tel" href="#" dir="ltr"></a>
+      <div class="credit">תמונות: <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></div>
     </div>
   </footer>
 
@@ -345,7 +554,7 @@
   <div class="bar">
     <div class="container">
       <div class="row">
-        <div class="label"><strong>מחיר משוער</strong><small class="js-hours-note"></small></div>
+        <div class="label"><strong>סה״כ לתשלום</strong><small class="js-hours-note"></small></div>
         <span class="total js-total"></span>
       </div>
       <button type="button" class="cta" id="next">המשך</button>
@@ -358,13 +567,19 @@
     const PHONE_DISPLAY = "054-209-9126";
     const GREETING = "שלום! 👋 הגעתי מהאתר ואשמח לשמוע פרטים על ניקיון הבית";
     const PRICE_PER_HOUR = 90;
-    const MIN_HOURS = 3;
+    // ✏️ החבילות: price = מחיר קבוע (null = לפי שעה)
+    const SERVICES = {
+      regular: { name: "ניקיון שוטף", price: 450, duration: "כ-5 שעות" },
+      deep: { name: "ניקיון יסודי כולל חלונות", price: 700 },
+      hourly: { name: "ניקיון לפי שעה", price: null },
+    };
+    const MIN_HOURS = 4;
     const MAX_HOURS = 8;
     const DAYS_AHEAD = 14;
     const START_TIMES = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00"];
     const CLOSED_WEEKDAYS = [6]; // שבת
 
-    const state = { step: 1, hours: 4, date: null, time: null };
+    const state = { step: 1, service: "regular", hours: 4, date: null, time: null };
     const $ = s => document.querySelector(s);
     const $$ = s => document.querySelectorAll(s);
     const form = $("#booking");
@@ -395,14 +610,37 @@
     $$(".js-min").forEach(el => { el.textContent = MIN_HOURS; });
     $("#year").textContent = new Date().getFullYear();
 
-    // --- שעות ומחיר ---
+    // --- כניסה עדינה בגלילה ---
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(entries => entries.forEach(en => {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      }), { threshold: 0.12 });
+      $$(".reveal").forEach(el => io.observe(el));
+    } else {
+      $$(".reveal").forEach(el => el.classList.add("in"));
+    }
+
+    // --- חבילה, שעות ומחיר ---
+    const service = () => SERVICES[state.service];
+    const isHourly = () => service().price === null;
+    const total = () => isHourly() ? state.hours * PRICE_PER_HOUR : service().price;
+    const duration = () => isHourly() ? `${state.hours} שעות` : service().duration;
+
+    $$(".js-price").forEach(el => { el.textContent = `${SERVICES[el.dataset.service].price} ₪`; });
+    $$(".js-rate").forEach(el => { el.textContent = `${PRICE_PER_HOUR} ₪`; });
+
     function renderPrice() {
+      $$(".service").forEach(c => c.classList.toggle("on", c.querySelector("input").checked));
+      $("#hours-card").hidden = !isHourly();
       $("#hours").textContent = state.hours;
-      $$(".js-total").forEach(el => { el.textContent = `₪${state.hours * PRICE_PER_HOUR}`; });
-      $(".js-hours-note").textContent = ` · ${state.hours} שעות × ₪${PRICE_PER_HOUR}`;
+      $$(".js-total").forEach(el => { el.textContent = `₪${total()}`; });
+      $(".js-hours-note").textContent = isHourly()
+        ? ` · ${state.hours} שעות × ₪${PRICE_PER_HOUR}`
+        : ` · ${service().name}${service().duration ? ` · ${service().duration}` : ""}`;
       $("#minus").disabled = state.hours <= MIN_HOURS;
       $("#plus").disabled = state.hours >= MAX_HOURS;
     }
+    $$('input[name="service"]').forEach(r => r.addEventListener("change", () => { state.service = r.value; renderPrice(); }));
     $("#plus").addEventListener("click", () => { state.hours = Math.min(MAX_HOURS, state.hours + 1); renderPrice(); });
     $("#minus").addEventListener("click", () => { state.hours = Math.max(MIN_HOURS, state.hours - 1); renderPrice(); });
 
@@ -439,7 +677,9 @@
     function goTo(step) {
       state.step = step;
       $$(".step").forEach(s => s.classList.toggle("active", Number(s.dataset.step) === step));
-      $$(".progress span").forEach((s, i) => s.classList.toggle("on", i < step));
+      $$(".progress span, .progress-labels li").forEach(s => {
+        s.classList.toggle("on", [...s.parentNode.children].indexOf(s) < step);
+      });
       const next = $("#next");
       next.textContent = step === 3 ? "💬 שליחת ההזמנה בוואטסאפ" : "המשך";
       next.classList.toggle("wa", step === 3);
@@ -451,11 +691,11 @@
 
     function renderSummary() {
       const rows = [
-        ["שירות", "ניקיון כללי"],
+        ["שירות", service().name],
         ["תאריך", formatDate(state.date)],
         ["שעה", state.time],
-        ["משך", `${state.hours} שעות`],
-        ["סה״כ", `₪${state.hours * PRICE_PER_HOUR}`],
+        ...(duration() ? [["משך", duration()]] : []),
+        ["סה״כ", `₪${total()}`],
       ];
       $("#summary").innerHTML = rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("");
     }
@@ -478,7 +718,9 @@
         `📍 כתובת: ${f.address.value.trim()}`,
         `📅 תאריך: ${formatDate(state.date)}`,
         `⏰ שעה: ${state.time}`,
-        `⌛ משך: ${state.hours} שעות (סה״כ ₪${state.hours * PRICE_PER_HOUR})`,
+        `🧹 שירות: ${service().name}`,
+        ...(duration() ? [`⌛ משך: ${duration()}`] : []),
+        `💰 סה״כ: ₪${total()}`,
       ];
       if (f.notes.value.trim()) lines.push(`📝 הערות: ${f.notes.value.trim()}`);
       window.open(waLink(lines.join("\n")), "_blank");
