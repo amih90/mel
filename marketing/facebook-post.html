@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>בית נקי · פוסט לפייסבוק</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #f7f3ec; --surface: #fffdf9; --text: #1f2a26; --muted: #6b746f; --line: #ebe4d8;
+          --primary: #2f6b5b; --primary-soft: #e6efe9; --blush: #f2dccf; --display: "Fredoka", "Rubik", sans-serif; }
+  html, body { margin: 0; width: 1080px; height: 1350px; overflow: hidden; }
+  body { font-family: "Rubik", sans-serif; color: var(--text); background: var(--bg); }
+  .post { position: relative; width: 1080px; height: 1350px; display: flex; flex-direction: column; }
+
+  .photo { position: relative; height: 790px; margin: 36px 36px 0; border-radius: 40px; overflow: hidden; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .photo::after { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20,32,28,.88) 0%, rgba(20,32,28,.45) 50%, rgba(20,32,28,.05) 80%); }
+  .brand { position: absolute; top: 34px; right: 38px; z-index: 1; display: flex; align-items: center; gap: 14px;
+    background: rgba(255,253,249,.94); padding: 10px 26px 10px 12px; border-radius: 999px; }
+  .brand img { width: 58px; height: 58px; border-radius: 16px; }
+  .brand span { font-family: var(--display); font-weight: 700; font-size: 40px; color: var(--primary); }
+  .tag { position: absolute; top: 34px; left: 38px; z-index: 1; background: rgba(255,255,255,.18);
+    border: 1.5px solid rgba(255,255,255,.5); color: #fff; padding: 10px 24px; border-radius: 999px;
+    font-size: 28px; font-weight: 500; backdrop-filter: blur(6px); }
+  .headline { position: absolute; bottom: 40px; right: 48px; left: 48px; z-index: 1; color: #fff; }
+  .headline h1 { font-family: var(--display); font-weight: 700; font-size: 92px; line-height: 1.08; margin: 0 0 14px; }
+  .headline h1 em { font-style: normal; color: var(--blush); }
+  .headline p { margin: 0; font-size: 32px; opacity: .92; }
+
+  .prices { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 20px; margin: 34px 36px 0; }
+  .price { background: var(--surface); border: 2px solid var(--line); border-radius: 30px; padding: 26px 24px 24px;
+    position: relative; box-shadow: 0 18px 40px -26px rgba(31,42,38,.45); }
+  .price.hot { border-color: var(--primary); background: linear-gradient(140deg, var(--primary-soft), var(--surface) 70%); }
+  .price .star { position: absolute; top: -20px; right: 22px; background: var(--primary); color: #fff;
+    font-size: 22px; font-weight: 700; padding: 3px 16px; border-radius: 999px; }
+  .price h2 { font-family: var(--display); font-size: 38px; margin: 0; line-height: 1.15; }
+  .price .sub { color: var(--muted); font-size: 23px; line-height: 1.35; margin: 6px 0 12px; min-height: 62px; }
+  .price .amount { font-family: var(--display); font-weight: 700; font-size: 62px; color: var(--primary); line-height: 1; }
+  .price .amount small { font-family: "Rubik", sans-serif; font-size: 24px; font-weight: 500; color: var(--muted); }
+
+  .footer { margin: auto 36px 36px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    background: var(--primary); color: #fff; border-radius: 30px; padding: 26px 34px; }
+  .footer .where { font-size: 30px; font-weight: 700; }
+  .footer .where small { display: block; font-size: 22px; font-weight: 400; opacity: .8; }
+  .wa { display: flex; align-items: center; gap: 14px; background: #25d366; padding: 14px 28px; border-radius: 999px;
+    font-size: 36px; font-weight: 700; direction: ltr; }
+  .wa svg { width: 40px; height: 40px; fill: #fff; }
+</style>
+</head>
+<body>
+<div class="post">
+  <div class="photo">
+    <img src="../img/hero.webp" alt="">
+    <div class="brand"><img src="../img/logo.svg" alt=""><span>בית נקי</span></div>
+    <div class="tag">📍 כפר סבא והשרון</div>
+    <div class="headline">
+      <h1>את דואגת למשפחה,<br><em>אני דואגת לבית.</em></h1>
+      <p>ניקיון לבית במחיר קבוע מראש — מזמינים בוואטסאפ תוך דקה ✨</p>
+    </div>
+  </div>
+
+  <div class="prices">
+    <div class="price hot">
+      <span class="star">★ מומלץ</span>
+      <h2>ניקיון שוטף</h2>
+      <div class="sub">3 חדרי שינה, סלון, מטבח,<br>2 חדרי רחצה ומרפסת</div>
+      <div class="amount">450 ₪ <small>· כ-5 שעות</small></div>
+    </div>
+    <div class="price">
+      <h2>ניקיון יסודי</h2>
+      <div class="sub">ניקיון מעמיק לכל הבית<br><strong>כולל חלונות</strong></div>
+      <div class="amount">700 ₪</div>
+    </div>
+    <div class="price">
+      <h2>לפי שעה</h2>
+      <div class="sub">בדיוק כמה שצריך<br>מינימום 4 שעות</div>
+      <div class="amount">90 ₪ <small>/ שעה</small></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="where">להזמנה ולתיאום מועד
+      <small>חומרי הניקיון אינם כלולים במחיר</small></div>
+    <div class="wa">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C8.9 3 3.1 8.8 3.1 15.94c0 2.28.6 4.5 1.73 6.46L3 29l6.77-1.78a12.9 12.9 0 0 0 6.27 1.6h.01c7.13 0 12.94-5.8 12.94-12.94C28.99 8.8 23.18 3 16.04 3zm0 23.64h-.01a10.7 10.7 0 0 1-5.46-1.5l-.39-.23-4.02 1.05 1.07-3.92-.25-.4a10.67 10.67 0 0 1-1.64-5.7c0-5.9 4.8-10.7 10.71-10.7 2.86 0 5.55 1.11 7.570 3.14a10.63 10.63 0 0 1 3.13 7.57c0 5.9-4.8 10.7-10.71 10.7zm5.87-8.01c-.32-.16-1.91-.94-2.2-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.27-.19.21-.38.24-.7.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.91-1.79-2.23-.19-.32-.02-.5.14-.66.14-.14.32-.38.48-.56.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.73-1.75-.99-2.4-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.34c.16.21 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.91-.78 2.18-1.53.27-.75.27-1.4.19-1.53-.08-.13-.29-.21-.62-.37z"/></svg>
+      054-209-9126
+    </div>
+  </div>
+</div>
+</body>
+</html>
